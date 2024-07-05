@@ -1,0 +1,51 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "JetBrains New Dark",
+  "base_keymap": "SublimeText",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 15,
+  "buffer_line_height": {
+    "custom": 2
+  },
+  // Keep in mind, if the autosave with delay is enabled, format_on_save will be ignored
+  "format_on_save": "on",
+  // Inlay hint related settings
+  "inlay_hints": {
+    "enabled": true
+  },
+  // Zed's Prettier integration settings.
+  "prettier": {
+    "allowed": true,
+    "plugins": [],
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": false
+  },
+  // Language specific settings
+  "language_overrides": {
+    "TypeScript": {
+      "format_on_save": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "TSX": {
+      "format_on_save": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    }
+  }
+}

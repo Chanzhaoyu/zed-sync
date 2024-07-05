@@ -1,0 +1,12 @@
+[
+  // Bindings from Sublime Text
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format",
+      "alt-shift-n": "editor::SelectToNextWordEnd",
+      "cmd-i": "editor::ShowCompletions",
+      "cmd-space": "editor::ShowCompletions"
+    }
+  }
+]
