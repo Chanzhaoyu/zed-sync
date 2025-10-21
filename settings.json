@@ -4,77 +4,35 @@
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent": {
-    "use_modifier_to_send": false,
-    "play_sound_when_agent_done": false,
-    "always_allow_tool_actions": false,
-    "model_parameters": []
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "icon_theme": "JetBrains New UI Icons (Dark)",
-  "theme": "One Dark",
+  "ui_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrains Mono",
+  "confirm_quit": true,
   "base_keymap": "SublimeText",
-  "buffer_font_family": "Google Sans Code",
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 16,
   "buffer_font_size": 15,
   "buffer_line_height": {
     "custom": 2
   },
-  // Keep in mind, if the autosave with delay is enabled, format_on_save will be ignored
-  "format_on_save": "on",
-  // Inlay hint related settings
-  "inlay_hints": {
-    "enabled": false
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
   },
-  // Zed's Prettier integration settings.
-  "prettier": {
-    "allowed": true,
-    "plugins": [],
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": false
+  "features": {
+    "edit_prediction_provider": "copilot"
   },
   "languages": {
-    "JavaScript": {
-      "formatter": {
-        "external": {
-          "command": "pnpm",
-          "arguments": ["exec", "prettier", "--stdin-filepath", "{buffer_path}"]
-        }
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
-    },
     "TypeScript": {
-      "formatter": {
-        "external": {
-          "command": "pnpm",
-          "arguments": ["exec", "prettier", "--stdin-filepath", "{buffer_path}"]
+      "formatter": [
+        "prettier",
+        {
+          "code_action": "source.fixAll.eslint"
         }
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
-    },
-    "TSX": {
-      "formatter": {
-        "external": {
-          "command": "pnpm",
-          "arguments": ["exec", "prettier", "--stdin-filepath", "{buffer_path}"]
-        }
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      },
-      "format_on_save": "on"
+      ]
     }
   }
 }
